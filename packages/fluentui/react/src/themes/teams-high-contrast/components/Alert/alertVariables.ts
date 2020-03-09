@@ -7,7 +7,7 @@ export default (siteVars: any): Partial<AlertVariables> => {
     color: siteVars.colors.black,
 
     hoverBorderColor: siteVars.colors.black,
-    hoverBackgroundColor: siteVars.accessibleCyan,
+    hoverBackgroundColor: siteVars.accessibleYellow,
     focusBackgroundColor: siteVars.accessibleCyan,
 
     focusHoverBorderRadius: siteVars.borderRadius,
