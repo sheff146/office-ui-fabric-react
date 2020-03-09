@@ -5,6 +5,7 @@ import { pxToRem } from '../../../../utils';
 import Icon from '../../../../components/Icon/Icon';
 import getBorderFocusStyles from '../../getBorderFocusStyles';
 import getIconFillOrOutlineStyles from '../../getIconFillOrOutlineStyles';
+import Button from 'src/components/Button/Button';
 
 const attachmentStyles: ComponentSlotStylesPrepared<AttachmentProps, AttachmentVariables> = {
   root: ({ props: p, variables: v, theme: { siteVariables } }): ICSSInJSStyle => ({
@@ -31,9 +32,30 @@ const attachmentStyles: ComponentSlotStylesPrepared<AttachmentProps, AttachmentV
     ...((p.actionable || p.onClick) && {
       cursor: 'pointer',
 
+      ':focus-visible': {
+        backgroundColor: v.focusBackgroundColor,
+        color: v.focusColor,
+
+        [`& .${Button.className}`]: {
+          color: v.siblingsFocusColor
+        },
+
+        [`& .${Icon.className}`]: {
+          color: v.siblingsFocusColor
+        }
+      },
+
       ':hover': {
         background: v.backgroundColorHover,
-        color: v.textColorHover
+        color: v.textColorHover,
+
+        [`& .${Button.className}`]: {
+          color: v.siblingsHoverColor
+        },
+
+        [`& .${Icon.className}`]: {
+          color: v.siblingsHoverColor
+        }
       }
     })
   }),
