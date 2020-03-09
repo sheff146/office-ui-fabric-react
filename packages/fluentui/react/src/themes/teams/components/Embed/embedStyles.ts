@@ -6,7 +6,7 @@ import getBorderFocusStyles from '../../getBorderFocusStyles';
 
 export default {
   root: ({ props: p, variables: v, theme: { siteVariables } }): ICSSInJSStyle => {
-    const borderFocusStyles = getBorderFocusStyles({ siteVariables });
+    const borderFocusStyles = getBorderFocusStyles({ variables: siteVariables });
 
     return {
       display: 'inline-block',

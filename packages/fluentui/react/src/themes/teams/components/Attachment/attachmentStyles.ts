@@ -24,7 +24,7 @@ const attachmentStyles: ComponentSlotStylesPrepared<AttachmentProps, AttachmentV
     borderRadius: v.borderRadius,
 
     ...getBorderFocusStyles({
-      siteVariables,
+      variables: siteVariables,
       borderRadius: v.borderRadius
     }),
 
@@ -63,7 +63,7 @@ const attachmentStyles: ComponentSlotStylesPrepared<AttachmentProps, AttachmentV
   action: ({ props: p, variables: v, theme: { siteVariables } }): ICSSInJSStyle => {
     const iconFilledStyles = getIconFillOrOutlineStyles({ outline: false });
     const borderFocusStyles = getBorderFocusStyles({
-      siteVariables,
+      variables: siteVariables,
       borderRadius: v.borderRadius
     });
 

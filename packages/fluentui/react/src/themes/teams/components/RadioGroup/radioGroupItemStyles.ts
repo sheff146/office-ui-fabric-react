@@ -52,7 +52,7 @@ const radioStyles: ComponentSlotStylesPrepared<RadioGroupItemProps & RadioGroupI
       ...restHoverFocusTextColor(v.colorDisabled)
     }),
 
-    ...getBorderFocusStyles({ siteVariables })
+    ...getBorderFocusStyles({ variables: siteVariables })
   }),
 
   icon: ({ props: p, variables: v }): ICSSInJSStyle => ({
