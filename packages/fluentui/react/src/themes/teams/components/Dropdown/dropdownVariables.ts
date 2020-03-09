@@ -41,6 +41,7 @@ export interface DropdownVariables {
   selectedItemBackgroundColorFocus: string;
   selectedItemsMaxHeight: string;
   toggleIndicatorSize: string;
+  triggerButtonColorFocusActive: string;
   triggerButtonColorHover: string;
   width: string;
   overlayZIndex: number;
@@ -86,6 +87,7 @@ export default (siteVars): DropdownVariables => ({
   selectedItemBackgroundColorFocus: siteVars.colors.brand[200],
   selectedItemsMaxHeight: pxToRem(82),
   toggleIndicatorSize: pxToRem(32),
+  triggerButtonColorFocusActive: undefined,
   triggerButtonColorHover: siteVars.bodyColor,
   width: pxToRem(356),
   overlayZIndex: siteVars.zIndexes.overlay,
