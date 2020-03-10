@@ -77,7 +77,9 @@ const buttonStyles: ComponentSlotStylesPrepared<ButtonStylesProps, ButtonVariabl
 
         ':focus-visible': {
           ...borderFocusStyles[':focus-visible'],
+          backgroundColor: v.backgroundColorFocus,
           borderColor: v.borderColor,
+          color: v.colorFocus,
           borderWidth,
 
           ':hover': {
@@ -145,12 +147,10 @@ const buttonStyles: ComponentSlotStylesPrepared<ButtonStylesProps, ButtonVariabl
             boxShadow: 'none'
           },
 
-          ':focus': {
-            ...borderFocusStyles[':focus']
-          },
-
+          ':focus': borderFocusStyles[':focus'],
           ':focus-visible': {
-            ...borderFocusStyles[':focus-visible']
+            ...borderFocusStyles[':focus-visible'],
+            backgroundColor: v.primaryBackgroundColorFocus
           },
 
           ':hover': {
