@@ -23,5 +23,12 @@ export default (siteVars: any): Partial<MenuVariables> => ({
   primaryBorderColor: siteVars.colors.white,
 
   verticalBackgroundColor: siteVars.colors.black,
-  iconOnlyColorActive: siteVars.colors.black
+
+  iconOnlyColorActive: siteVars.colors.black,
+  iconOnlyBorderColorFocus: 'transparent',
+
+  underlinedActiveColor: siteVars.colors.white,
+  underlinedFocusColor: siteVars.colors.black,
+  underlinedHoverColor: siteVars.colors.white,
+  underlinedUnderlineColor: siteVars.colors.white
 });

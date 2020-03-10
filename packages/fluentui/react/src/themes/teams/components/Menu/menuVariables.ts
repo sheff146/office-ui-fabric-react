@@ -33,9 +33,13 @@ export interface MenuVariables {
   outlineColorFocus: string;
   colorActive: string;
   iconOnlyColorActive: string;
+  iconOnlyBorderColorFocus: string;
 
-  colorFocus: string;
   underlinedBorderColor: string;
+  underlinedActiveColor: string;
+  underlinedFocusColor: string;
+  underlinedHoverColor: string;
+  underlinedUnderlineColor: string;
 
   colorDisabled: string;
   lineHeightBase: string;
@@ -87,7 +91,6 @@ export default (siteVars: any): MenuVariables => {
     ),
     color: siteVars.colors.grey[500],
     colorActive: siteVars.colors.black,
-    colorFocus: siteVars.colors.white,
     colorDisabled: undefined,
 
     borderColor: undefined,
@@ -103,8 +106,13 @@ export default (siteVars: any): MenuVariables => {
     backgroundColorActive: undefined,
 
     iconOnlyColorActive: siteVars.colors.brand[600],
+    iconOnlyBorderColorFocus: siteVars.colors.brand[600],
 
     underlinedBorderColor: siteVars.colors.grey[200],
+    underlinedActiveColor: undefined,
+    underlinedFocusColor: undefined,
+    underlinedHoverColor: undefined,
+    underlinedUnderlineColor: undefined,
 
     lineHeightBase: siteVars.lineHeightMedium,
     horizontalPadding: `${pxToRem(14)} ${pxToRem(18)}`,

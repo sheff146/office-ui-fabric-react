@@ -286,15 +286,24 @@ const menuItemStyles: ComponentSlotStylesPrepared<MenuItemPropsAndState, MenuVar
         border: `${pxToRem(2)} solid transparent`
       }),
 
-      ...(underlined
-        ? { padding: `${pxToRem(4)} 0` }
-        : pointing && vertical
-        ? { padding: `${pxToRem(8)} ${pxToRem(18)}` }
-        : vertical
-        ? { padding: v.verticalItemPadding }
-        : {
-            padding: v.horizontalPadding
-          }),
+      padding: v.horizontalPadding,
+
+      ...(vertical && { padding: v.verticalItemPadding }),
+      ...(pointing && vertical && { padding: `${pxToRem(8)} ${pxToRem(18)}` }),
+      ...(underlined && {
+        padding: `${pxToRem(4)} 0`,
+
+        ...(active && {
+          color: v.underlinedActiveColor,
+          ...(!primary && underlinedItem(v.underlinedUnderlineColor))
+        }),
+        ':hover': {
+          color: v.underlinedHoverColor
+        },
+        ...(isFromKeyboard && {
+          color: v.underlinedFocusColor
+        })
+      }),
 
       ...(iconOnly && {
         margin: pxToRem(1),
@@ -328,7 +337,7 @@ const menuItemStyles: ComponentSlotStylesPrepared<MenuItemPropsAndState, MenuVar
       ...(isFromKeyboard && {
         ...(iconOnly && {
           borderRadius: '50%',
-          borderColor: v.iconOnlyColorActive,
+          borderColor: v.iconOnlyBorderColorFocus,
           ...getIconFillOrOutlineStyles({ outline: false })
         }),
 

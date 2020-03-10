@@ -1,7 +1,6 @@
 import { ComponentSlotStylesPrepared, ICSSInJSStyle } from '@fluentui/styles';
 import { MenuVariables } from '../../../teams/components/Menu/menuVariables';
 import { default as MenuItem, MenuItemProps, MenuItemState } from '../../../../components/Menu/MenuItem';
-import { underlinedItem } from '../../../teams/components/Menu/menuItemStyles';
 import submenuIndicatorUrl from '../../../teams/components/Menu/submenuIndicatorUrl';
 
 type MenuItemPropsAndState = MenuItemProps & MenuItemState;
@@ -82,30 +81,6 @@ const menuItemStyles: ComponentSlotStylesPrepared<MenuItemPropsAndState, MenuVar
           // reset all existing hover styles
         }
       })
-    };
-  },
-
-  root: ({ props, variables: v }): ICSSInJSStyle => {
-    const { iconOnly, isFromKeyboard, underlined, primary, active } = props;
-
-    return {
-      ...(underlined && {
-        ...(active && {
-          color: v.color,
-          ...(!primary && underlinedItem(v.color))
-        }),
-        ':hover': {
-          color: v.color
-        },
-        ...(isFromKeyboard && {
-          color: v.colorActive
-        })
-      }),
-      // focus styles
-      ...(isFromKeyboard &&
-        iconOnly && {
-          borderColor: 'transparent'
-        })
     };
   }
 };
