@@ -8,57 +8,62 @@ import getIconFillOrOutlineStyles from '../../getIconFillOrOutlineStyles';
 import Button from 'src/components/Button/Button';
 
 const attachmentStyles: ComponentSlotStylesPrepared<AttachmentProps, AttachmentVariables> = {
-  root: ({ props: p, variables: v, theme: { siteVariables } }): ICSSInJSStyle => ({
-    position: 'relative',
-    display: 'inline-flex',
-    alignItems: 'center',
-    width: '100%',
-    maxWidth: pxToRem(440),
-    minHeight: pxToRem(48),
-    padding: v.padding,
-    marginBottom: pxToRem(2),
-    marginRight: pxToRem(2),
-    background: v.backgroundColor,
-    color: v.textColor,
-    boxShadow: v.boxShadow,
-    border: `${siteVariables.borderWidth} solid ${v.borderColor}`,
-    borderRadius: v.borderRadius,
-
-    ...getBorderFocusStyles({
+  root: ({ props: p, variables: v, theme: { siteVariables } }): ICSSInJSStyle => {
+    const borderFocusStyles = getBorderFocusStyles({
       variables: siteVariables,
       borderRadius: v.borderRadius
-    }),
+    });
 
-    ...((p.actionable || p.onClick) && {
-      cursor: 'pointer',
+    return {
+      position: 'relative',
+      display: 'inline-flex',
+      alignItems: 'center',
+      width: '100%',
+      maxWidth: pxToRem(440),
+      minHeight: pxToRem(48),
+      padding: v.padding,
+      marginBottom: pxToRem(2),
+      marginRight: pxToRem(2),
+      background: v.backgroundColor,
+      color: v.textColor,
+      boxShadow: v.boxShadow,
+      border: `${siteVariables.borderWidth} solid ${v.borderColor}`,
+      borderRadius: v.borderRadius,
 
-      ':focus-visible': {
-        backgroundColor: v.focusBackgroundColor,
-        color: v.focusColor,
+      ...borderFocusStyles,
 
-        [`& .${Button.className}`]: {
-          color: v.siblingsFocusColor
+      ...((p.actionable || p.onClick) && {
+        cursor: 'pointer',
+
+        ':focus-visible': {
+          ...borderFocusStyles[':focus-visible'],
+          backgroundColor: v.focusBackgroundColor,
+          color: v.focusColor,
+
+          [`& .${Button.className}`]: {
+            color: v.siblingsFocusColor
+          },
+
+          [`& .${Icon.className}`]: {
+            color: v.siblingsFocusColor
+          }
         },
 
-        [`& .${Icon.className}`]: {
-          color: v.siblingsFocusColor
+        ':hover': {
+          background: v.backgroundColorHover,
+          color: v.textColorHover,
+
+          [`& .${Button.className}`]: {
+            color: v.siblingsHoverColor
+          },
+
+          [`& .${Icon.className}`]: {
+            color: v.siblingsHoverColor
+          }
         }
-      },
-
-      ':hover': {
-        background: v.backgroundColorHover,
-        color: v.textColorHover,
-
-        [`& .${Button.className}`]: {
-          color: v.siblingsHoverColor
-        },
-
-        [`& .${Icon.className}`]: {
-          color: v.siblingsHoverColor
-        }
-      }
-    })
-  }),
+      })
+    };
+  },
 
   content: (): ICSSInJSStyle => ({
     flex: 1
