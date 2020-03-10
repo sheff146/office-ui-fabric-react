@@ -6,6 +6,7 @@ export default (siteVars): Partial<DropdownVariables> => ({
   borderColor: siteVars.colors.white,
   borderWidth: `1px`,
   backgroundColorHover: siteVars.colors.black,
+  openBorderColorHover: undefined,
   borderColorHover: siteVars.accessibleCyan,
   borderColorFocus: siteVars.accessibleCyan,
   color: siteVars.colors.white,

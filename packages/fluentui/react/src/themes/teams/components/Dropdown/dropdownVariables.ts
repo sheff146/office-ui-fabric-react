@@ -4,8 +4,9 @@ export interface DropdownVariables {
   backgroundColor: string;
   backgroundColorHover: string;
   borderColor: string;
-  borderColorHover: string;
+  openBorderColorHover: string;
   borderColorFocus: string;
+  borderColorHover: string;
   borderWidth: string;
   containerBorderRadius: string;
   openAboveContainerBorderRadius: string;
@@ -55,6 +56,7 @@ export default (siteVars): DropdownVariables => ({
   backgroundColorHover: siteVars.colors.grey[150],
   borderColor: 'transparent',
   borderColorFocus: siteVars.colors.brand[600],
+  openBorderColorHover: undefined,
   borderColorHover: undefined,
   borderWidth: '0px',
   containerBorderRadius: `${cornerRadius}`,

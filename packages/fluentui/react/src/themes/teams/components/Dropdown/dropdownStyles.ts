@@ -76,6 +76,11 @@ const dropdownStyles: ComponentSlotStylesPrepared<DropdownPropsAndState, Dropdow
     ':hover': {
       backgroundColor: v.backgroundColorHover,
       borderColor: v.borderColorHover,
+
+      ...(p.open && {
+        borderColor: v.openBorderColorHover
+      }),
+
       [`& .${Dropdown.slotClassNames.triggerButton}`]: {
         color: v.triggerButtonColorHover
       }
