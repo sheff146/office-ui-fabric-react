@@ -5,7 +5,7 @@ import { pxToRem } from '../../../../utils';
 import Icon from '../../../../components/Icon/Icon';
 import getBorderFocusStyles from '../../getBorderFocusStyles';
 import getIconFillOrOutlineStyles from '../../getIconFillOrOutlineStyles';
-import Button from 'src/components/Button/Button';
+import Button from '../../../../components/Button/Button';
 
 const attachmentStyles: ComponentSlotStylesPrepared<AttachmentProps, AttachmentVariables> = {
   root: ({ props: p, variables: v, theme: { siteVariables } }): ICSSInJSStyle => {
